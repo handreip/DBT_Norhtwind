@@ -7,6 +7,6 @@ with clientes as (
     ,modifieddate
     ,storeid as id_loja
     ,rowguid
-    from {{ source('db_adventure_works_bruto', 'customer')}}
+    from {{ source('northwind_etl', 'customer')}}
 )
 select * from clientes
