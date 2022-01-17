@@ -5,7 +5,7 @@ with clientes as (
     ,territoryid as id_territorio
     ,modifieddate
     ,storeid as id_loja
-    ,rowguid
+    --,rowguid
     from {{ source('adventureworks_bruto_stitch', 'customer')}}
 )
 select * from clientes
