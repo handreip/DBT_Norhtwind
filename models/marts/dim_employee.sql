@@ -6,8 +6,8 @@ with
     Pessoa as(
         select * 
         from {{ref('stg_person')}} 
-    )
-        , transformed as (
+    ),
+    transformed as (
             select
                 row_number() over ( order by empregado.id_empregado) as empregado_sk -- autoincremental surrogate kay
                 ,empregado.id_empregado

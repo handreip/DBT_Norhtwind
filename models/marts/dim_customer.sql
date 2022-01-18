@@ -12,9 +12,9 @@ with
                 row_number() over ( order by clientes.id_cliente ) as cliente_sk -- autoincremental surrogate kay
                 ,clientes.id_cliente
                 ,clientes.id_pessoa
-                ,id_territorio
-                ,modifieddate
-                ,id_loja
+                ,clientes.id_territorio
+                ,clientes.modifieddate
+                ,clientes.id_loja
                 ,Pessoa.primeiro_nome
                 ,Pessoa.nome_meio
                 ,Pessoa.sobrenome
