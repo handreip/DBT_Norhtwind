@@ -1,7 +1,7 @@
 with 
     cartao_credito as (
         select * 
-        from {{ref('Stg_creditcard')}} 
+        from {{ref('stg_creditcard')}} 
     ),
     pessoa_cartao as (
         select * 

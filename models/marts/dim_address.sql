@@ -1,15 +1,15 @@
 with 
     endereco as (
         select * 
-        from {{ref('Stg_address')}} 
+        from {{ref('stg_address')}} 
     ),
     estado as (
         select * 
-        from {{ref('Stg_stateprovince')}} 
+        from {{ref('stg_stateprovince')}} 
     ),
     pais as (
         select *
-        from {{ref('Stg_countryregion')}
+        from {{ref('stg_countryregion')}}
     ),
     transformed as (
             select
@@ -23,6 +23,9 @@ with
             ,endereco.endereco_linha_2
             ,estado.nome_estado_provinvia
             ,pais.nome_pais_regiao
+            ,estado.cod_estado_provincia
+            ,pais.cod_pais_regiao
+            from endereco
             left join estado on endereco.id_estado_provincia = estado.id_estado_provincia
             left join pais on   estado.cod_pais_regiao = pais.cod_pais_regiao
             )
