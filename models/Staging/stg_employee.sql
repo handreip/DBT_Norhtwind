@@ -8,8 +8,8 @@ with empregado as
     ,birthdate	as data_nascimento
     ,jobtitle	as descricao_vaga
     ,loginid	as id_login
-    ,currentflag as data_contratacao
-    ,hiredate	as data_demissao
+    ,hiredate	as data_contratacao
+    ,currentflag
     ,sickleavehours	
     ,salariedflag
     ,maritalstatus	

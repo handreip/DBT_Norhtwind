@@ -17,7 +17,6 @@ with
                 ,empregado.descricao_vaga
                 ,empregado.id_login
                 ,empregado.data_contratacao
-                ,empregado.data_demissao
                 ,Pessoa.primeiro_nome
                 ,Pessoa.nome_meio
                 ,Pessoa.sobrenome
