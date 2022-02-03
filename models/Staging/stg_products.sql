@@ -21,5 +21,6 @@ with produtos as (
     ,sellstartdate as data_inicio_venda
     ,weight as peso
 from {{ source('adventureworks_bruto_stitch', 'product')}}
+order by id_produto
 )
 select * from produtos

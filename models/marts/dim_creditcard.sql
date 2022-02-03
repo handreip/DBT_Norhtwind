@@ -14,6 +14,7 @@ with
         , transformed as (
             select
                 row_number() over ( order by cartao_credito.id_cartaodecredito) as cartao_sk -- autoincremental surrogate kay
+                ,cartao_credito.id_cartaodecredito
                 ,cartao_credito.tipo_cartao
                 ,cartao_credito.numero_cartao        
                 ,cartao_credito.exp_mes    
