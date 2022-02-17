@@ -48,7 +48,6 @@ with
         salesorderheader.id_pedido
         ,salesorderheader.data_pedido
         ,salesorderheader.status
-        ,COALESCE(motivo_venda.tipo_motivo, 'sem motivo') as motivo_venda
         ,Customers.cliente_sk as cliente_fk
         ,Customers.primeiro_nome
         ,Customers.nome_meio
@@ -62,7 +61,6 @@ with
         left join Customers on salesorderheader.id_cliente = Customers.id_cliente
         left join adress on salesorderheader.id_local_entrega = adress.id_endereco
         left join creditcard on salesorderheader.id_cartaodecredito = creditcard.cartao_sk
-        left join motivo_venda on salesorderheader.id_pedido = motivo_venda.id_pedido      
     ),
     Sales_order_detail as (
     select
@@ -79,7 +77,6 @@ with
         salesorderheader.id_pedido
         ,salesorderheader.data_pedido
         ,salesorderheader.status
-        ,salesorderheader.motivo_venda
         ,salesorderheader.cliente_fk
         ,salesorderheader.primeiro_nome
         ,salesorderheader.nome_meio
